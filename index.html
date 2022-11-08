@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    const choice = ["rock", "paper", "scissors"]
+    let playerSelection = null;
+    let computerSelection = 0;
+    let input = 0;
+
+    function getComputerChoice(choice) {
+        let randomChoice = choice[Math.floor(Math.random()*choice.length)];
+        return randomChoice;
+    }
+
+    function getPlayerChoice(input) {
+        do {
+                playerSelection = prompt("Rock, paper or scissors?");
+                if (choice.indexOf(playerSelection) >= 0)
+                input = 1;
+            } while (input !== 1)
+        return playerSelection.toLowerCase();
+    }
+
+    function playRound(playerSelection, computerSelection) {
+        if (computerSelection === "rock" && playerSelection === "paper") {
+            console.log("You beat computer: paper beats rock!")
+        } 
+        else if (computerSelection === "rock" && playerSelection === "scissors") {
+            console.log("Computer beats you: rock beats scissors!")
+        }
+        else if (computerSelection === "paper" && playerSelection === "rock") {
+            console.log("Computer beats you: paper beats rock!")
+        }
+        else if (computerSelection === "paper" && playerSelection === "scissors") {
+            console.log("You beat computer: scissors beats paper!")
+        }
+        else if (computerSelection === "scissors" && playerSelection === "paper") {
+            console.log("Computer beat you: scissors beats paper!")
+        }
+        else if (computerSelection === "scissors" && playerSelection === "rock") {
+            console.log("You beat computer: rock beats scissors!")
+        }
+        else {
+            console.log ("It's tie!");
+        }
+    }
+
+    function game() {
+        for (let i = 0; i<5; i++) {
+            playerSelection = getPlayerChoice(input);
+            console.log(playerSelection);
+            computerSelection = getComputerChoice(choice);
+            console.log(computerSelection);
+            playRound(playerSelection, computerSelection);
+        }
+    }   
+    
+    game();
+</script>
+</html>
