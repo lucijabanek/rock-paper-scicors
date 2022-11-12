@@ -1,0 +1,14 @@
+#playerChoices {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    width: 100%;
+}
+
+#imageRock, #imagePaper, #imageScissors {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 20vw;
+    padding: 5%;
+}

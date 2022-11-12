@@ -4,88 +4,18 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <script src="script.js"></script>
         <title>Document</title>
     </head>
     <body>
-
+        <div id="playerChoices">
+            <input type="image" id="imageRock" alt="Rock" onclick="getPlayerChoice(this)"
+                src="/images/rock.png">
+            <input type="image" id="imagePaper" alt="Paper" onclick="getPlayerChoice(this)"
+                src="/images/paper.png">
+            <input type="image" id="imageScissors" alt="Scissors" onclick="getPlayerChoice(this)"
+                src="/images/scissors.png">
+        </div>
     </body>
-    <script>
-
-    const choice = ["rock", "paper", "scissors"]
-    let playerSelection = null;
-    let computerSelection = 0;
-    let input = 0;
-    let playerScore = 0;
-    let computerScore = 0;
-
-    let getComputerChoice = (choice) => {
-        let randomChoice = choice[Math.floor(Math.random()*choice.length)];
-        return randomChoice;
-    }
-
-    let getPlayerChoice = (input) => {
-        do {
-                playerSelection = prompt("Rock, paper or scissors?");
-                if (choice.indexOf(playerSelection) >= 0)
-                input = 1;
-            } while (input !== 1)
-        return playerSelection.toLowerCase();
-    }
-
-    function playRound(playerSelection, computerSelection) {
-        if (computerSelection === "rock" && playerSelection === "paper") {
-            console.log("You beat computer: paper beats rock!")
-            playerScore++;
-            console.log(playerScore, computerScore);
-        } 
-        else if (computerSelection === "rock" && playerSelection === "scissors") {
-            console.log("Computer beats you: rock beats scissors!")
-            computerScore++;
-            console.log(playerScore, computerScore);
-        }
-        else if (computerSelection === "paper" && playerSelection === "rock") {
-            console.log("Computer beats you: paper beats rock!")
-            computerScore++;
-            console.log(playerScore, computerScore);
-        }
-        else if (computerSelection === "paper" && playerSelection === "scissors") {
-            console.log("You beat computer: scissors beats paper!")
-            playerScore++;
-            console.log(playerScore, computerScore);
-        }
-        else if (computerSelection === "scissors" && playerSelection === "paper") {
-            console.log("Computer beats you: scissors beats paper!")
-            computerScore++;
-            console.log(playerScore, computerScore);
-        }
-        else if (computerSelection === "scissors" && playerSelection === "rock") {
-            console.log("You beat computer: rock beats scissors!")
-            playerScore++;
-            console.log(playerScore, computerScore);
-        }
-        else {
-            console.log ("It's tie!");
-            console.log(playerScore, computerScore);
-        }
-    }
-
-    let game = () => {
-        while (playerScore < 5 && computerScore < 5) {
-            playerSelection = getPlayerChoice(input);
-            console.log(playerSelection);
-            computerSelection = getComputerChoice(choice);
-            console.log(computerSelection);
-            playRound(playerSelection, computerSelection);
-
-            if(playerScore == 5) {
-                console.log("Player win!");
-            } else if (computerScore == 5){
-                console.log("Computer win!")
-            } else 
-            continue;
-        }
-    }   
-    
-    game();
-</script>
 </html>
