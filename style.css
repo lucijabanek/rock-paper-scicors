@@ -5,7 +5,7 @@
     width: 100%;
 }
 
-#imageRock, #imagePaper, #imageScissors {
+#rock, #paper, #scissors {
     display: flex;
     flex-direction: row;
     width: 100%;

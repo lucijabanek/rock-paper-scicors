@@ -5,17 +5,25 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="style.css" />
-        <script src="script.js"></script>
-        <title>Document</title>
+        <title>Rock, paper or scissors?</title>
     </head>
     <body>
         <div id="playerChoices">
-            <input type="image" id="imageRock" alt="Rock" onclick="getPlayerChoice(this)"
-                src="/images/rock.png">
-            <input type="image" id="imagePaper" alt="Paper" onclick="getPlayerChoice(this)"
-                src="/images/paper.png">
-            <input type="image" id="imageScissors" alt="Scissors" onclick="getPlayerChoice(this)"
-                src="/images/scissors.png">
+            <input type="image" id="rock" alt="Rock" onclick="getPlayerChoice(this)"
+                src="./images/rock.png">
+            <input type="image" id="paper" alt="Paper" onclick="getPlayerChoice(this)"
+                src="./images/paper.png">
+            <input type="image" id="scissors" alt="Scissors" onclick="getPlayerChoice(this)"
+                src="./images/scissors.png">
         </div>
+        <div id="score">
+            <h3 id = "counterHeader">Points counter</h3>
+            <h4>Player's counter</h4>
+            <p id = "playerCounter">0</p>
+            <h4>Computer's counter</h4>
+            <p id = "computerCounter">0</p>
+            <p id="Winner"></p>
+        </div>
+        <script src="script.js"></script>
     </body>
 </html>
