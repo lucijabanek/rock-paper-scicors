@@ -1,8 +1,11 @@
 let playerScore = 0;
 let computerScore = 0;
 const roundWinner = document.getElementById("Winner");
+const playerChoiceDiv = document.getElementById("playerChoice");
+const computerChoiceDiv = document.getElementById("computerChoice");
 
-let getPlayerChoice = (playerSelection) => {
+
+function getPlayerChoice(playerSelection){
 
     const choice = ["rock", "paper", "scissors"]
     let computerSelection = 0;
@@ -13,38 +16,33 @@ let getPlayerChoice = (playerSelection) => {
 }
 
 let getComputerChoice = (choice) => {
-    let randomChoice = choice[Math.floor(Math.random() * choice.length)];
+    const randomChoice = choice[Math.floor(Math.random() * choice.length)];
     return randomChoice;
 }
 
-let playRound = (playerSelection, computerSelection) => {
+function playRound(playerSelection, computerSelection) {
 
     if (playerSelection === computerSelection) {
-        roundWinner.textContent = `${playerSelection} vs. ${computerSelection}: It's tie!`;
+        updateChoiceDiv(playerSelection, computerSelection);
+        roundWinner.textContent = `IT'S TIE!`;
     } else if (playerSelection === "paper") {
         if (computerSelection === "rock") {
-            playerScore++;
-            roundWinner.textContent = `paper vs. rock: Player beat computer!`;
+            participantWinRound(playerSelection, computerSelection);
         } else {
-            computerScore++;
-            roundWinner.textContent = `paper vs scissors: Computer beats player!`;
+            computerWinRound(playerSelection, computerSelection);
         }
     } else if (playerSelection === "scissors") {
         if (computerSelection === "paper") {
-            playerScore++;
-            roundWinner.textContent = `scissors vs. paper: Player beat computer!`;
+            participantWinRound(playerSelection, computerSelection);
         } else {
-            computerScore++;
-            roundWinner.textContent = `scissors vs. rock: Computer beats player!`;
+            computerWinRound(playerSelection, computerSelection);
         }
     } else if (playerSelection === "rock") {
         if (computerSelection === "scissors") {
-            playerScore++;
-            roundWinner.textContent = `rock vs. scissors: Player beat computer!`;
+            participantWinRound(playerSelection, computerSelection);
         }
         else {
-            computerScore++;
-            roundWinner.textContent = `rock vs. paper: Computer beats player!`;
+            computerWinRound(playerSelection, computerSelection);
         }
     }
     updateScore();
@@ -61,12 +59,36 @@ function updateScore() {
 
 function gameWinner() {
     if (playerScore === 5) {
-        playerScore = 0;
-        computerScore = 0;
-        roundWinner.textContent = `Player win!`;
+        resetCounter();
+        roundWinner.textContent = `PLAYER WIN!`;
     } else if (computerScore === 5) {
-        playerScore = 0;
-        computerScore = 0;
-        roundWinner.textContent = `Computer win!`;
+        resetCounter();
+        roundWinner.textContent = `COMPUTER WIN!`;
     }
 }
+
+function resetCounter() {
+    playerScore = 0;
+    computerScore = 0;
+}
+
+function participantWinRound(playerSelection, computerSelection){
+    playerScore++;
+    updateChoiceDiv(playerSelection, computerSelection);
+    roundWinner.textContent = `PLAYER BEAT COMPUTER THIS ROUND!`;
+}
+
+function computerWinRound(playerSelection, computerSelection){
+    computerScore++;
+    updateChoiceDiv(playerSelection, computerSelection);
+    roundWinner.textContent = `COMPUTER BEATS PLAYER THIS ROUND!`;
+}
+
+function updateChoiceDiv(playerSelection, computerSelection) {
+    playerSelection = playerSelection.toUpperCase();
+    computerSelection = computerSelection.toUpperCase();
+    playerChoiceDiv.textContent = `${playerSelection}`;
+    computerChoiceDiv.textContent = `${computerSelection}`;
+}
+
+
