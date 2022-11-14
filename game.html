@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap"
+            rel="stylesheet">
+        <title>Rock, paper or scissors?</title>
+    </head>
+    <body>
+        <div id="playerChoices">
+            <input type="image" id="rock" alt="Rock"
+                onclick="getPlayerChoice(this)"
+                src="./images/rock.png">
+            <input type="image" id="paper" alt="Paper"
+                onclick="getPlayerChoice(this)"
+                src="./images/paper.png">
+            <input type="image" id="scissors" alt="Scissors"
+                onclick="getPlayerChoice(this)"
+                src="./images/scissors.png">
+        </div>
+        <div id="choices">
+            <div id="playerChoiceDiv">
+                <h2>PLAYER CHOICE:</h2>
+                <p id="playerChoice"></p>
+            </div>
+            <p id="Winner"></p>
+            <div id="computerChoiceDiv">
+                <h2>COMPUTER CHOICE:</h2>
+                <p id="computerChoice"></p>
+            </div>
+        </div>
+        <div id="score">
+            <div id="playerDiv">
+                <h2>PLAYER</h2>
+                <p id="playerCounter">0</p>
+            </div>
+            <div id="computerDiv">
+                <h2>COMPUTER</h2>
+                <p id="computerCounter">0</p>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

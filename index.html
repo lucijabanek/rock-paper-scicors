@@ -10,41 +10,31 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap"
             rel="stylesheet">
+            <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+            integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+            crossorigin="anonymous"
+          />
+        <script src="script.js"></script>
         <title>Rock, paper or scissors?</title>
     </head>
     <body>
-        <div id="playerChoices">
-            <input type="image" id="rock" alt="Rock"
-                onclick="getPlayerChoice(this)"
-                src="./images/rock.png">
-            <input type="image" id="paper" alt="Paper"
-                onclick="getPlayerChoice(this)"
-                src="./images/paper.png">
-            <input type="image" id="scissors" alt="Scissors"
-                onclick="getPlayerChoice(this)"
-                src="./images/scissors.png">
+        <div id="homePage">
+            <div>
+                <h1>ROCK, PAPER OR SCISSORS?</h1>
+            </div>
+            <div id="rulesDiv">
+                <h3 id="rulesTitle">RULES:</h3>
+                <ol>
+                    <li>You play against computer.</li>
+                    <li>Click on picture of your choice (rock, paper or scissors).</li>
+                    <li>See who won a round.</li>
+                    <li>Who first get to 5, wins!</li>
+                </ol>
+            </div>
+            <h2>When you're ready, click on Play button! Good luck!</h2>
+            <a href="./game.html"> <i class="fas fa-play-circle"></i></a>
         </div>
-        <div id="choices">
-            <div id="playerChoiceDiv">
-                <h2>PLAYER CHOICE:</h2>
-                <p id="playerChoice"></p>
-            </div>
-            <p id="Winner"></p>
-            <div id="computerChoiceDiv">
-                <h2>COMPUTER CHOICE:</h2>
-                <p id="computerChoice"></p>
-            </div>
-        </div>
-        <div id="score">
-            <div id="playerDiv">
-                <h2>PLAYER</h2>
-                <p id="playerCounter">0</p>
-            </div>
-            <div id="computerDiv">
-                <h2>COMPUTER</h2>
-                <p id="computerCounter">0</p>
-            </div>
-        </div>
-        <script src="script.js"></script>
     </body>
 </html>

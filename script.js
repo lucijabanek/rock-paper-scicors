@@ -1,8 +1,8 @@
 let playerScore = 0;
 let computerScore = 0;
-const roundWinner = document.getElementById("Winner");
 const playerChoiceDiv = document.getElementById("playerChoice");
 const computerChoiceDiv = document.getElementById("computerChoice");
+const roundWinner = document.getElementById("Winner");
 
 
 function getPlayerChoice(playerSelection){

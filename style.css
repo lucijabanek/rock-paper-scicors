@@ -1,19 +1,21 @@
 * {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
+    padding: 0; 
 }
 
 #playerChoices {
     display: flex;
     flex-direction: row;
     margin: auto;
-    width: 90%;
+    width: 80%;
+    height: 75%;
 }
 
 #rock, #paper, #scissors {
     display: flex;
     width: 100%;
-    height: 20vw;
+    height: 15vw;
     padding: 5%;
 }
 
@@ -47,3 +49,47 @@
     flex-direction: column;
 
 }
+
+#homePage {
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    align-items: center;
+    padding: 10%;
+}
+
+#rulesDiv {
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+}
+
+.fas {
+    font-size: 8rem;
+    border-radius: 50%;
+    border: none;
+    color: black;
+    padding-top: 2.5vw;
+  }
+  
+  .fas:hover {
+    cursor: pointer;
+    -webkit-transform: translateY(-0.5rem);
+    -ms-transform: translateY(-0.5rem);
+    transform: translateY(-0.5rem);
+    -webkit-transition: -webkit-transform 150ms;
+    transition: -webkit-transform 150ms;
+    -o-transition: transform 150ms;
+    transition: transform 150ms;
+    transition: transform 150ms, -webkit-transform 150ms;
+  }
+  
+  .fas[disabled]:hover {
+    cursor: not-allowed;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+  }
+  
