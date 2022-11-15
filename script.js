@@ -5,7 +5,7 @@ const computerChoiceDiv = document.getElementById("computerChoice");
 const roundWinner = document.getElementById("Winner");
 
 
-function getPlayerChoice(playerSelection){
+function getPlayerChoice(playerSelection) {
 
     const choice = ["rock", "paper", "scissors"]
     let computerSelection = 0;
@@ -58,12 +58,24 @@ function updateScore() {
 }
 
 function gameWinner() {
+    let endGamePopupDiv = document.getElementById("endGamePopup");
+    const playerScoreDiv = document.getElementById("playerScore");
+    const computerScoreDiv = document.getElementById("computerScore");
+    const gameWinner = document.getElementById("winner");
+
+
     if (playerScore === 5) {
+        endGamePopupDiv.removeAttribute("hidden");
+        gameWinner.textContent = `PLAYER WINS!`;
+        playerScoreDiv.textContent = `${playerScore}`; 
+        computerScoreDiv.textContent = `${computerScore}`;
         resetCounter();
-        roundWinner.textContent = `PLAYER WIN!`;
     } else if (computerScore === 5) {
+        endGamePopupDiv.removeAttribute("hidden");
+        gameWinner.textContent = `COMPUTER WINS!`;
+        playerScoreDiv.textContent = `${playerScore}`; 
+        computerScoreDiv.textContent = `${computerScore}`;
         resetCounter();
-        roundWinner.textContent = `COMPUTER WIN!`;
     }
 }
 
@@ -72,13 +84,13 @@ function resetCounter() {
     computerScore = 0;
 }
 
-function participantWinRound(playerSelection, computerSelection){
+function participantWinRound(playerSelection, computerSelection) {
     playerScore++;
     updateChoiceDiv(playerSelection, computerSelection);
-    roundWinner.textContent = `PLAYER BEAT COMPUTER THIS ROUND!`;
+    roundWinner.textContent = `PLAYER BEATS COMPUTER THIS ROUND!`;
 }
 
-function computerWinRound(playerSelection, computerSelection){
+function computerWinRound(playerSelection, computerSelection) {
     computerScore++;
     updateChoiceDiv(playerSelection, computerSelection);
     roundWinner.textContent = `COMPUTER BEATS PLAYER THIS ROUND!`;
